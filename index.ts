@@ -17,7 +17,7 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server started 🚀!\n
-        http://localhost:${port}\n
-    `);
+    console.log("Server started!!! 🚀\n"+
+        "http://localhost:"+port
+    );
 });
