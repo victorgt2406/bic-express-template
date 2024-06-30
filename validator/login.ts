@@ -5,6 +5,7 @@ import { NextFunction, Request, Response } from "express";
 const validatorLogin = [
     check("user").exists().notEmpty(),
     check("password").exists().notEmpty().isLength({ min: 8, max: 64 }),
+    check('keep').optional().notEmpty().isBoolean(),
     (req: Request, res: Response, next: NextFunction) => {
         return handleValidator(req, res, next);
     },
