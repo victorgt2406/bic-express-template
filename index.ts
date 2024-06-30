@@ -3,10 +3,13 @@ import express from "express";
 import routes from "./routes";
 import path from "path";
 import { configDotenv } from "dotenv";
+import cors from "cors"
 
 configDotenv();
 const port = process.env.port || 3000;
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 // API routes
 app.use("/api", routes);
